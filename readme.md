@@ -1,40 +1,35 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+Social network
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Intro
+The main purpose of the site is to demonstrate my Laravel capabilities. It also proves that I can use Twitter Bootstrap framework as well as jQuery library with AJAX. I have also created the model of the database.
 
-## About Laravel
+I have used a free template from https://w3layouts.com/ which I have modified only to add some functionalities to the site. The template is responsive, Bootstrap based.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+Site functionalities 
+The whole site is developed with Laravel 5.4 framework.
+The site gives the following functionalities (the list is not exhaustive):
+1.	It allows users to register and subsequently log in and out,
+2.	After registration, a profile is created which is the possible to expand by providing a picture and additional info,
+3.	The home page holds the wall with posts created by registered users,
+4.	Registered users can comment on the posts thus developing active discussions, like, unlikec etc.
+5.	Every posts shows the number of likes, date of creating post, comments,
+6.	It gives the users possibilities to create interest groups,
+7.	They can join groups- the creator of the group can exclude them,
+8.	They can make friends by sending a request and accepting it. 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Site structure and my approach to building this site
+I have used Laravel main features in developing the site:
+1.	I have used Eloquent for most of the relations like User-Post (One-To-Many), User-Comment (One-To-Many), Post-Comment(One-To-Many), User-Group (Many-to-Many) which required a pivot table etc.
+2.	Additionally, I have used DB Query Builder for some database manipulation actions to prove my competence it that segment too (so some relationships are intentinally not mapped by their respective models).
+3.	I have used artisan CLI for making models, controllers, migrations etc.
+4.	I have used the Blade template engine quite extensively for @if, @foreach, @include and many other actions, 
+5.	I have used View Composer for providing the data for the sidebar (which is a part of every page),
+6.	Routes are protected by middleware (‘auth’, ‘guest’),
+7.	Some actions that are implemented with GET request are protected with a bit of logic in controllers requiring a user to be signed in and to be the right one for the action (e.g. if you accepting a friend, you must be the user whom the request was sent and many other)
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+jQuery and AJAX  usage:
+Even though all functionalities could have been attained by using PHP and Laravel, I have intentionally used jQuery for some DOM manipulation like showing form for sending messages when clicked, traversing the DOM and displaying some alerts. 
+I used jQuery with AJAX for storing the messages in the database.
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+This is in short what this project is about and how it was technically implemented.   
+PS: I will shortly work out this site through a RESTfull concept with Angular 4 at the front and Laravel at the back-end.
