@@ -2,7 +2,7 @@ Social network
 
 Intro 
 
-You can see how the web site works: social-network.dragan-jankovic.info
+You can see how the web site works: http://www.dragan-jankovic.info/
 
 The main purpose of the site is to demonstrate my Laravel capabilities. It also proves that I can use Twitter Bootstrap framework as well as jQuery library with AJAX. I have also created the model of the database.
 
